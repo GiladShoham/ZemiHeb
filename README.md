@@ -2,6 +2,8 @@
 
 A lightweight utility for encoding and mapping Hebrew characters for Zemismart smart switch LED displays.
 
+**Live App:** [https://zemiheb.netlify.app/](https://zemiheb.netlify.app/)
+
 Works with [Home Assistant](https://www.home-assistant.io/) and [Zigbee2MQTT](https://www.zigbee2mqtt.io/).
 
 ## Features
