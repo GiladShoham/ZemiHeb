@@ -1,12 +1,12 @@
 import { FaMugHot } from 'react-icons/fa6'
+import { useTranslation } from '../i18n/LanguageContext'
 
 export default function BuyCoffeeSection() {
+  const { t } = useTranslation()
+
   return (
     <section className="coffee">
-      <p className="coffee-text">
-        This project is free and open source. If you find it useful and want to give back,
-        consider buying me a coffee!
-      </p>
+      <p className="coffee-text">{t('coffee.text')}</p>
       <a
         href="https://buymeacoffee.com/shohamgilax"
         target="_blank"
@@ -14,7 +14,7 @@ export default function BuyCoffeeSection() {
         className="coffee-btn"
       >
         <FaMugHot size={20} />
-        Buy me a coffee
+        {t('coffee.button')}
       </a>
     </section>
   )

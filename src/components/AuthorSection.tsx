@@ -1,4 +1,5 @@
 import { FaLinkedin, FaXTwitter, FaInstagram, FaGithub, FaGlobe } from 'react-icons/fa6'
+import { useTranslation } from '../i18n/LanguageContext'
 
 const PHOTO_URL = 'https://res.cloudinary.com/dzc7cp7jh/image/upload/w_150,h_150,c_fill,g_face,q_auto,f_auto/v1772482350/Gilad-Shoham_Session-402_1141_qrgyij.jpg'
 
@@ -11,11 +12,13 @@ const SOCIALS = [
 ]
 
 export default function AuthorSection() {
+  const { t } = useTranslation()
+
   return (
     <section className="author">
-      <img src={PHOTO_URL} alt="Gilad Shoham" className="author-photo" />
+      <img src={PHOTO_URL} alt={t('author.photoAlt')} className="author-photo" />
       <div className="author-info">
-        <h3 className="author-name">Gilad Shoham</h3>
+        <h3 className="author-name">{t('author.name')}</h3>
         <div className="author-socials">
           {SOCIALS.map(({ icon: Icon, url, label }) => (
             <a

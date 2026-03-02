@@ -2,6 +2,7 @@ import switchImg1 from '../assets/1 gang.png'
 import switchImg2 from '../assets/2 gangs.png'
 import switchImg3 from '../assets/3 gangs.png'
 import switchImg4 from '../assets/4 gangs.png'
+import { useTranslation } from '../i18n/LanguageContext'
 
 interface Props {
   gangCount: 1 | 2 | 3 | 4
@@ -23,12 +24,13 @@ const POSITIONS: Record<number, number[]> = {
 }
 
 export default function SwitchPreview({ gangCount, labels }: Props) {
+  const { t } = useTranslation()
   const positions = POSITIONS[gangCount]
 
   return (
     <div className="switch-preview-container">
       <div className="switch-preview">
-        <img src={IMAGES[gangCount]} alt="Zemismart switch" className="switch-img" />
+        <img src={IMAGES[gangCount]} alt={t('switchPreview.alt')} className="switch-img" />
         {positions.map((rightPct, i) => {
           const text = labels[i]?.slice(0, 10)
           return (
@@ -39,7 +41,7 @@ export default function SwitchPreview({ gangCount, labels }: Props) {
                 right: `${rightPct}%`,
               }}
             >
-              {text || `תווית ${i + 1}`}
+              {text || `${t('switchPreview.label')} ${i + 1}`}
             </span>
           )
         })}

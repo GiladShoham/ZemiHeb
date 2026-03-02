@@ -6,6 +6,7 @@
   padding: 16px 0;
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 32px;
+  direction: ltr;
 }
 
 .header-logos {
@@ -18,6 +19,29 @@
   height: 36px;
   width: auto;
   object-fit: contain;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-toggle {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-toggle:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .header-github {

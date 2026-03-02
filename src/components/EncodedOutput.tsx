@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FaRegCopy, FaCheck } from 'react-icons/fa6'
 import { encodeHebrewForZemismart } from '../utils/hebrewEncoder'
+import { useTranslation } from '../i18n/LanguageContext'
 
 interface Props {
   gangCount: 1 | 2 | 3 | 4
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export default function EncodedOutput({ gangCount, labels }: Props) {
+  const { t } = useTranslation()
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
 
   const handleCopy = async (text: string, index: number) => {
@@ -18,15 +20,15 @@ export default function EncodedOutput({ gangCount, labels }: Props) {
 
   return (
     <section className="output-section">
-      <h2 className="section-title">Encoded Output</h2>
-      <p className="section-desc">Copy the encoded text below and paste it in Home Assistant / Zigbee2MQTT.</p>
+      <h2 className="section-title">{t('output.title')}</h2>
+      <p className="section-desc">{t('output.desc')}</p>
       <div className="input-grid">
         {Array.from({ length: gangCount }, (_, i) => {
           const encoded = labels[i] ? encodeHebrewForZemismart(labels[i]) : ''
           const isCopied = copiedIndex === i
           return (
             <div key={i} className="input-row">
-              <label className="input-label">Button {i + 1} — Encoded</label>
+              <label className="input-label">{t('output.buttonEncoded')} {i + 1} {t('output.encodedSuffix')}</label>
               <div className="input-wrapper">
                 <input
                   type="text"
@@ -39,7 +41,7 @@ export default function EncodedOutput({ gangCount, labels }: Props) {
                 <button
                   className={`copy-btn ${isCopied ? 'copy-btn--copied' : ''}`}
                   onClick={() => handleCopy(encoded, i)}
-                  aria-label={`Copy encoded text for button ${i + 1}`}
+                  aria-label={`${t('output.copyAriaLabel')} ${i + 1}`}
                   disabled={!encoded}
                 >
                   {isCopied ? <FaCheck size={14} /> : <FaRegCopy size={14} />}

@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react'
+import { LanguageProvider } from './i18n/LanguageContext'
 import Header from './components/Header'
 import IntroSection from './components/IntroSection'
 import GangSelector from './components/GangSelector'
@@ -24,7 +25,7 @@ export default function App() {
   }, [])
 
   return (
-    <>
+    <LanguageProvider>
       <Header />
       <main>
         <IntroSection />
@@ -35,6 +36,6 @@ export default function App() {
         <AuthorSection />
         <BuyCoffeeSection />
       </main>
-    </>
+    </LanguageProvider>
   )
 }
