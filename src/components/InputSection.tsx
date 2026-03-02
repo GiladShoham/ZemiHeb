@@ -1,7 +1,7 @@
 import { FaTimes } from 'react-icons/fa'
 
 interface Props {
-  gangCount: 2 | 3 | 4
+  gangCount: 1 | 2 | 3 | 4
   labels: string[]
   onLabelsChange: (labels: string[]) => void
 }

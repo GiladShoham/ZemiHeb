@@ -1,11 +1,11 @@
-type GangCount = 2 | 3 | 4
+type GangCount = 1 | 2 | 3 | 4
 
 interface Props {
   gangCount: GangCount
   onGangCountChange: (count: GangCount) => void
 }
 
-const OPTIONS: GangCount[] = [2, 3, 4]
+const OPTIONS: GangCount[] = [1, 2, 3, 4]
 
 export default function GangSelector({ gangCount, onGangCountChange }: Props) {
   return (

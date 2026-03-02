@@ -3,7 +3,7 @@ import { FaRegCopy, FaCheck } from 'react-icons/fa6'
 import { encodeHebrewForZemismart } from '../utils/hebrewEncoder'
 
 interface Props {
-  gangCount: 2 | 3 | 4
+  gangCount: 1 | 2 | 3 | 4
   labels: string[]
 }
 

@@ -9,7 +9,7 @@ import AuthorSection from './components/AuthorSection'
 import BuyCoffeeSection from './components/BuyCoffeeSection'
 import './App.css'
 
-type GangCount = 2 | 3 | 4
+type GangCount = 1 | 2 | 3 | 4
 
 export default function App() {
   const [gangCount, setGangCount] = useState<GangCount>(4)
